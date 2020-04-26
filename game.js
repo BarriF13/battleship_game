@@ -7,25 +7,32 @@ var hits = 0;
 var guesses = 0;
 var isSunk = false;
 
-while the ship is not Sunk
-GET user's guess
-COMPARE the user's input to valid input values
+while (isSunk === false) {
+guess = prompt("Ready, aim, fire! (enter a number 0-6):");
+if(guess <0 || guess > 6){
+  alert('Please enter a valid cell number!')
+} else {
+  guesses += 1;
+}
+};
+if ( guess === location1 ) {
+  hits +=1;
+} else if( guess === location2 ){
+   hits +=1 ;
+} else if( guess === location3 ){
+  hits +=1 ;
+}
+//   ADD one to guesses
 
-if the user's guess in invalid
-  TELL user to enter a valid Number
+//     if the user's guess matches a location
+//       ADD one to the number of hits
+//       if number of hits is 3 
+//         SET isSunk to true
+//         TELL the user "You sank my battleship"
 
-  ELSE 
-  ADD one to guesses
-
-    if the user's guess matches a location
-      ADD one to the number of hits
-      if number of hits is 3 
-        SET isSunk to true
-        TELL the user "You sank my battleship"
-
-        End IF 
-      END IF
-    END IF
-  END LOOP
-  TELL user stats 
+//         End IF 
+//       END IF
+//     END IF
+//   END LOOP
+//   TELL user stats 
 
