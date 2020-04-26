@@ -7,6 +7,7 @@ var hits = 0;
 var guesses = 0;
 var isSunk = false;
 
+
 while (isSunk == false) {
   guess = prompt("Ready, aim, fire! (enter a number 0-6):");
   if (guess < 0 || guess > 6) {
@@ -16,20 +17,14 @@ while (isSunk == false) {
 
     if (guess == location1 || guess == location2 || guess == location3) {
       hits += 1;
+      if (hits == 3) {
+        isSunk = true;
+        alert("You sank my battleship!!");
+      }
     }
   }
 };
-//   ADD one to guesses
+var stats = "You took" + guesses + " guesses to sink the battleship, " + " which means your shooting accuracy was " + (3/guesses);
+alert(stats);
 
-//     if the user's guess matches a location
-//       ADD one to the number of hits
-//       if number of hits is 3 
-//         SET isSunk to true
-//         TELL the user "You sank my battleship"
-
-//         End IF 
-//       END IF
-//     END IF
-//   END LOOP
-//   TELL user stats 
 
